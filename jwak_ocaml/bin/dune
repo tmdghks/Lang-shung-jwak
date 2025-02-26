@@ -1,0 +1,4 @@
+(executable
+ (public_name jwak_ocaml)
+ (name main)
+ (libraries jwak_ocaml))

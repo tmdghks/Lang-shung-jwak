@@ -1,0 +1,26 @@
+# Build artifacts produced by Dune
+/_build/
+
+# Compiled object files and artifacts
+*.cmo
+*.cmi
+*.cmx
+*.o
+*.a
+*.so
+*.exe
+
+# OPAM local switch files (if any)
+.opam/
+
+# Dune cache files
+.dune/
+
+# Editor backup files and temporary files
+*~
+*.swp
+*.swo
+*.merlin
+
+# VSCode workspace settings
+.vscode/

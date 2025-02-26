@@ -1,0 +1,2 @@
+(library
+ (name jwak_ocaml))
