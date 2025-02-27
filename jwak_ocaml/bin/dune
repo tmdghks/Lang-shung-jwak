@@ -1,4 +1,7 @@
+;; bin/dune
+
 (executable
- (public_name jwak_ocaml)
  (name main)
+ (public_name jwak_ocaml)
+ (modules main)
  (libraries jwak_ocaml))

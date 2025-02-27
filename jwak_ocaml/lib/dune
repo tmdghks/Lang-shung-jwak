@@ -1,2 +1,20 @@
+;; lib/dune
+
 (library
- (name jwak_ocaml))
+ (name jwak_ocaml)
+ (public_name jwak_ocaml)
+ (modules ast Lexer Parser)
+ ; (libraries ...) ; 필요시 다른 라이브러리 의존성
+)
+
+;; ocamlyacc rule
+(rule
+ (targets parser.ml parser.mli)
+ (deps parser.mly)
+ (action (run ocamlyacc -v %{deps})))
+
+;; ocamllex rule
+(rule
+ (targets lexer.ml)
+ (deps lexer.mll)
+ (action (run ocamllex %{deps})))
