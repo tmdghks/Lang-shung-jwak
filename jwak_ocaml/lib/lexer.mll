@@ -2,7 +2,7 @@
 open Parser
 }
 (* 공백 문자 *)
-let whitespace = [' ' '\t' '\n' '\r']+
+let whitespace = [' ' '\t' '\n' '\r' '?' '!' '.']+
 (* 한글 문자열 기반 토큰 처리.
    실제 구현 시 UTF-8 처리에 유의하세요. *)
 rule read_token = parse
@@ -34,7 +34,7 @@ rule read_token = parse
     }
       
   (* "ㅋ" 반복 → TKa *)
-  | ("ㅋ")* as s     { TKa(String.length s) }
+  | ("ㅋ")* as s     { TKa(String.length s / 3) }
   
   (* 연산자/기호 *)
   | "~"              { TPlusOp }
